@@ -203,31 +203,33 @@ export default function Todo() {
                 >
                   {/* Checkbox */}
                   <button
-                    onClick={() => {
-                      toggleTodo(todo.id);
-                    }}
+                    onClick={() => toggleTodo(todo.id)}
                     className={`w-5 h-5 rounded-full border-2 shrink-0 transition-colors duration-200 cursor-pointer
-                      ${
-                        todo.completed
-                          ? "bg-white border-white"
-                          : "border-faint hover:border-muted"
-                      }`}
+          ${
+            todo.completed
+              ? "bg-white border-white"
+              : "border-faint hover:border-muted"
+          }`}
                   />
 
-                  {/* Text */}
-                  <span
-                    className={`flex-1 transition-colors duration-200
-                      ${todo.completed ? "line-through text-hover-border" : "text-white"}`}
-                  >
-                    {todo.title}
-                  </span>
-                  <span className="text-faint">
-                    {formatDate(todo.createdAt)} · {formatTime(todo.createdAt)}
-                  </span>
+                  {/* Text + Date stacked */}
+                  <div className="flex-1 min-w-0">
+                    <span
+                      className={`block truncate transition-colors duration-200
+            ${todo.completed ? "line-through text-hover-border" : "text-white"}`}
+                    >
+                      {todo.title}
+                    </span>
+                    <span className="text-faint text-xs">
+                      {formatDate(todo.createdAt)} ·{" "}
+                      {formatTime(todo.createdAt)}
+                    </span>
+                  </div>
+
                   {/* Delete */}
                   <button
                     onClick={() => deleteTodo(todo.id)}
-                    className="text-faint hover:text-red-400 transition-colors duration-200 text-lg cursor-pointer"
+                    className="text-faint hover:text-red-400 transition-colors duration-200 text-lg cursor-pointer shrink-0"
                     aria-label="Delete task"
                   >
                     ×

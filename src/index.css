@@ -24,3 +24,6 @@
   /* Custom Font Sizes (optional) */
   --font-size-display: 3.5rem;
 }
+* {
+  touch-action: manipulation;
+}
