@@ -103,14 +103,14 @@ export default function Todo() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-base flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <p className="text-subtle font-sans">Loading...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-base flex flex-col items-center px-4 py-16 font-sans">
+    <div className="min-h-screen bg-black flex flex-col items-center px-4 py-16 font-sans">
       {/* Navbar */}
       <div className="w-full max-w-2xl flex justify-end mb-6">
         <button
@@ -176,7 +176,7 @@ export default function Todo() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Add a new task..."
-            className="flex-1 bg-transparent text-white text-sm placeholder-faint outline-none"
+            className="flex-1 bg-transparent text-white text-base placeholder-faint outline-none"
           />
           <button
             type="submit"
@@ -212,15 +212,15 @@ export default function Todo() {
           }`}
                   />
 
-                  {/* Text + Date stacked */}
-                  <div className="flex-1 min-w-0">
+                  {/* Text + Date */}
+                  <div className="flex-1 min-w-0 flex flex-col justify-between sm:flex-row sm:items-center sm:gap-4">
                     <span
-                      className={`block truncate transition-colors duration-200
+                      className={`block truncate transition-colors duration-200 text-lg
             ${todo.completed ? "line-through text-hover-border" : "text-white"}`}
                     >
                       {todo.title}
                     </span>
-                    <span className="text-faint text-xs">
+                    <span className="text-faint text-xs sm:text-sm shrink-0">
                       {formatDate(todo.createdAt)} ·{" "}
                       {formatTime(todo.createdAt)}
                     </span>

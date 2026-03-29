@@ -34,7 +34,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base flex flex-col items-center justify-center px-4 font-sans">
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4 font-sans">
       {/* Header */}
       <div className="text-center mb-10">
         <h1 className="font-serif text-6xl font-bold text-white tracking-tight mb-2">
@@ -55,47 +55,51 @@ const RegisterPage = () => {
         <form onSubmit={handleRegister} className="flex flex-col gap-5">
           {/* Email */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-dimmed text-sm font-medium">Email</label>
+            <label className="text-dimmed text-base font-medium">Email</label>
             <input
               type="email"
               value={email}
               onChange={({ target }) => setEmail(target.value)}
               placeholder="you@example.com"
               required
-              className="bg-base border border-border rounded-xl px-4 py-3 text-white text-sm placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
+              className="bg-black border border-border rounded-xl px-4 py-3 text-white text-base placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
             />
           </div>
 
           {/* Full Name */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-dimmed text-sm font-medium">Full Name</label>
+            <label className="text-dimmed text-base font-medium">
+              Full Name
+            </label>
             <input
               type="text"
               value={name}
               onChange={({ target }) => setName(target.value)}
               placeholder="John Doe"
               required
-              className="bg-base border border-border rounded-xl px-4 py-3 text-white text-sm placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
+              className="bg-black border border-border rounded-xl px-4 py-3 text-white text-base placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
             />
           </div>
 
           {/* Password */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-dimmed text-sm font-medium">Password</label>
+            <label className="text-dimmed text-base font-medium">
+              Password
+            </label>
             <input
               type="password"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
               placeholder="••••••••"
               required
-              className="bg-base border border-border rounded-xl px-4 py-3 text-white text-sm placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
+              className="bg-black border border-border rounded-xl px-4 py-3 text-white text-base placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
             />
           </div>
 
           {/* Submit */}
           <button
             type="submit"
-            className="mt-2 bg-white font-semibold text-base rounded-xl py-3 hover:bg-text-soft transition-colors duration-200 cursor-pointer"
+            className="mt-2 bg-white font-semibold text- rounded-xl py-3 hover:bg-text-soft transition-colors duration-200 cursor-pointer"
           >
             Register
           </button>

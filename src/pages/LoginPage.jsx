@@ -27,7 +27,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base flex flex-col items-center justify-center px-4 font-sans">
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4 font-sans">
       {/* Header */}
       <div className="text-center mb-10">
         <h1 className="font-serif text-6xl font-bold text-white tracking-tight mb-2">
@@ -41,48 +41,50 @@ const LoginPage = () => {
         <h2 className="font-serif text-2xl font-bold text-white mb-1">
           Welcome back
         </h2>
-        <p className="text-subtle text-sm mb-8">Login to access your tasks</p>
+        <p className="text-subtle text-base mb-8">Login to access your tasks</p>
 
         <form onSubmit={handleLogin} className="flex flex-col gap-5">
           {error && <p className="text-red-400 text-sm">{error}</p>}
 
           {/* Email */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-dimmed text-sm font-medium">Email</label>
+            <label className="text-dimmed text-base font-medium">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               required
-              className="bg-base border border-border rounded-xl px-4 py-3 text-white text-sm placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
+              className="bg-black border border-border rounded-xl px-4 py-3 text-white text-base placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
             />
           </div>
 
           {/* Password */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-dimmed text-sm font-medium">Password</label>
+            <label className="text-dimmed text-base font-medium">
+              Password
+            </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               required
-              className="bg-base border border-border rounded-xl px-4 py-3 text-white text-sm placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
+              className="bg-black border border-border rounded-xl px-4 py-3 text-white text-base placeholder-faint outline-none focus:border-hover-border transition-colors duration-200"
             />
           </div>
 
           {/* Submit */}
           <button
             type="submit"
-            className="mt-2 bg-white font-semibold text-base rounded-xl py-3 hover:bg-text-soft transition-colors duration-200 cursor-pointer"
+            className="mt-2 bg-white font-semibold text-black rounded-xl py-3 hover:bg-text-soft transition-colors duration-200 cursor-pointer"
           >
             Login
           </button>
         </form>
 
         <p className="text-center text-sm text-subtle mt-6">
-          Don't have an account?{" "}
+          Don't have an account?
           <Link
             to="/register"
             className="text-white underline hover:text-dimmed transition-colors"
