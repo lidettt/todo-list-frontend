@@ -1,13 +1,12 @@
-import axios from "axios";
-const baseUrl = "/api/auth";
+import api from "./api";
 
 const register = async (credentials) => {
-  const response = await axios.post(`${baseUrl}/register`, credentials);
+  const response = await api.post("/auth/register", credentials);
   return response.data;
 };
 
 const login = async (credentials) => {
-  const response = await axios.post(`${baseUrl}/login`, credentials);
+  const response = await api.post("/auth/login", credentials);
   return response.data;
 };
 
